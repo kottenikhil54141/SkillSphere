@@ -21,7 +21,7 @@ export default function FreelancerDashboard() {
 
   const fetchGigs = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/gigs", {
+      const res = await axios.get("https://skillsphere-backend-jz7a.onrender.com/api/gigs", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setGigs(res.data);

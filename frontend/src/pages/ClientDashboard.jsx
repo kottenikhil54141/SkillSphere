@@ -22,7 +22,7 @@ export default function ClientDashboard() {
 
   const fetchProposals = async (gigId) => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/proposals/${gigId}`, {
+      const res = await axios.get(`https://skillsphere-backend-jz7a.onrender.com/api/proposals/${gigId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -37,7 +37,7 @@ export default function ClientDashboard() {
 
   const fetchNotifications = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/notifications/me", {
+      const res = await axios.get("https://skillsphere-backend-jz7a.onrender.com/api/notifications/me", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setNotifications(res.data);
@@ -48,7 +48,7 @@ export default function ClientDashboard() {
 
   const fetchPayments = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/payments/me", {
+      const res = await axios.get("https://skillsphere-backend-jz7a.onrender.com/api/payments/me", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setPayments(res.data);
@@ -59,7 +59,7 @@ export default function ClientDashboard() {
 
   const fetchGigs = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/gigs", {
+      const res = await axios.get("https://skillsphere-backend-jz7a.onrender.com/api/gigs", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -89,7 +89,7 @@ export default function ClientDashboard() {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/gigs",
+        "https://skillsphere-backend-jz7a.onrender.com/api/gigs",
         {
           title,
           description,
@@ -116,7 +116,7 @@ export default function ClientDashboard() {
   const handleAccept = async (proposalId) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/proposals/${proposalId}/accept`,
+        `https://skillsphere-backend-jz7a.onrender.com/api/proposals/${proposalId}/accept`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -130,7 +130,7 @@ export default function ClientDashboard() {
   const handleReject = async (proposalId) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/proposals/${proposalId}/reject`,
+        `https://skillsphere-backend-jz7a.onrender.com/api/proposals/${proposalId}/reject`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -144,7 +144,7 @@ export default function ClientDashboard() {
   const markNotificationRead = async (id) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/notifications/${id}/read`,
+        `https://skillsphere-backend-jz7a.onrender.com/api/notifications/${id}/read`,
         {},
         {
           headers: {
@@ -167,7 +167,7 @@ export default function ClientDashboard() {
   const releasePayment = async (gigId, amount) => {
     try {
       await axios.post(
-        "http://localhost:5000/api/payments",
+        "https://skillsphere-backend-jz7a.onrender.com/api/payments",
         {
           gigId,
           amount,

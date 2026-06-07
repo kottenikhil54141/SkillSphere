@@ -16,7 +16,7 @@ export default function Register() {
     setIsSubmitting(true);
 
     try {
-      await axios.post("http://localhost:5000/api/auth/register", {
+      await axios.post("https://skillsphere-backend-jz7a.onrender.com/api/auth/register", {
         name,
         email,
         password,

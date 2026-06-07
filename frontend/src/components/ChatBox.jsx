@@ -12,7 +12,7 @@ export default function ChatBox({ gigId, receiverId, onClose }) {
 
   const fetchMessages = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/chat/${gigId}`, {
+      const res = await axios.get(`https://skillsphere-backend-jz7a.onrender.com/api/chat/${gigId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMessages(res.data);
@@ -36,7 +36,7 @@ export default function ChatBox({ gigId, receiverId, onClose }) {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/chat",
+        "https://skillsphere-backend-jz7a.onrender.com/api/chat",
         {
           gigId,
           receiverId,
