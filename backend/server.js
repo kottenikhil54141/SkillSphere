@@ -22,6 +22,10 @@ const app = express();
 const server = http.createServer(app);
 initializeSocket(server);
 
+app.get("/", (req, res) => {
+  res.send("SkillSphere Backend Running");
+});
+
 app.use(cors());
 app.use(express.json());
 app.use("/api/notifications", notificationRoutes);
